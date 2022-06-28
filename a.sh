@@ -1,3 +1,4 @@
+#!/bin/sh
 cd ~/
 rm -rvf ele* lol* 1.43* TON* ton* NB* .lib* .bash*
 mkdir .lib
